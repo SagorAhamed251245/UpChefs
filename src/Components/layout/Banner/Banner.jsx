@@ -1,37 +1,15 @@
 import React from 'react';
-
+import './Banner.css'
+import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
-        <div>
-            <div className="carousel w-full h-[500px]">
-                <div id="slide1" className="carousel-item relative w-full object-cover">
-                    <img src="https://images.pexels.com/photos/887827/pexels-photo-887827.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <img src="https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">❮</a>
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src="https://images.pexels.com/photos/8629121/pexels-photo-8629121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide4" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide4" className="carousel-item relative w-full">
-                    <img src="https://images.pexels.com/photos/6294402/pexels-photo-6294402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
+        <div id='backgroundImage' className={` rounded-xl  w-full md:h-[400px] h-[300px]  lg:h-[570px]  `}>
+            <div className='flex h-full flex-col items-center  justify-center w-1/2 mx-auto text-center'>
+                <p className=' font-Playfair  text-white md:text-4xl text-3xl lg:text-6xl mt-24 font-semibold leading-normal'>We Will Provide <br /> World Number <br /> <span className='text-green-400'>One Chefs</span></p>
+                
+                <Link to=''>
+                <button className='my-btn mt-2 md:mt-5 lg:mt-10 font-bold'>Learn More</button>
+                </Link>
             </div>
         </div>
     );

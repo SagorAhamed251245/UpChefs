@@ -21,12 +21,12 @@ const Header = () => {
                 <div className="flex-none">
                     <div className='flex gap-5 mr-3 font-semibold'>
                         <Link to='/login' >
-                            <button className=' text-black hover:bg-green-500 hover:text-white bg-green-400 px-5 rounded-lg py-2'>
+                            <button className='my-btn'>
                                 Login
                             </button>
                         </Link>
                         <Link to='/register' >
-                            <button className=' text-black hover:bg-green-500 hover:text-white bg-green-400 px-5 rounded-lg py-2'>
+                            <button className='my-btn'>
                                 Register
                             </button>
                         </Link>

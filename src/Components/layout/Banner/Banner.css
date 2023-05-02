@@ -1,0 +1,12 @@
+#backgroundImage{
+    background-image: url("https://images.pexels.com/photos/8093867/pexels-photo-8093867.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") , linear-gradient(rgba(0, 0, 0, 0.726),rgba(0,0,0,0.5)) ;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+   
+    
+    background-size: cover;
+    background-position: center;
+}
+.my-btn{
+    @apply  text-black hover:bg-green-500 hover:text-white bg-green-400 px-5 rounded-lg py-2
+}
