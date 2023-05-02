@@ -5,6 +5,7 @@ import Home from '../Components/Pages/Home/Home';
 import Blogs from '../Components/Pages/Blogs/Blogs';
 import Register from '../Components/Pages/Register/Register';
 import Login from '../Components/Pages/Login/Login';
+import ChefDetails from '../Components/Pages/ChefDetails/ChefDetails';
 
 
 
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
                 element:<Home></Home>,
                 loader: () => fetch('https://chef-recipe-hunter-server-side-sagorahamed251245.vercel.app/chefs')
             
+            },
+            {
+                path:'/chef/:id',
+                element:<ChefDetails></ChefDetails>,
+                loader: ({params}) => fetch(`https://chef-recipe-hunter-server-side-sagorahamed251245.vercel.app/chefs/${params.id}`)
             },
             {
                 path:'/blog',

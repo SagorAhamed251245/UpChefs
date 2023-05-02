@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
-    console.log(chef)
-    const { picture, name, num_recipes, years_of_experience, likes } = chef
+    
+    const { picture, name, num_recipes, years_of_experience, likes , id} = chef
     return (
-        <div className="card w-96 border-2 text-black hover:border-green-500  ">
+        <div className="card w-96 border-2 text-black bg-green-100 font-sans  hover:border-green-500  ">
 
 
 
@@ -27,8 +28,8 @@ const ChefCard = ({ chef }) => {
                     <span className='font-bold'>Likes:</span>
                     <span className='text-green-400 font-semibold text-2xl'> {likes}</span>
                 </p>
-                <div className="card-actions">
-                    <button className="my-btn">View Recipes</button>
+                <div className="card-actions mt-5">
+                    <Link to={`/chef/${id}`}><button className="my-btn font-bold">View Recipes</button></Link>
                 </div>
             </div>
         </div>
