@@ -9,6 +9,7 @@ import ChefDetails from '../Components/Pages/ChefDetails/ChefDetails';
 import RecipesCard from '../Components/Pages/ChefDetails/RecipesCard';
 import RecipesDetails from '../Components/Pages/RecipesDetails/RecipesDetails';
 import PrivateRoute from './PrivateRoute';
+import ErrorPage from '../Components/Pages/Error/ErrorPage';
 
 
 
@@ -17,10 +18,12 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>,
+               
                 loader: () => fetch('https://chef-recipe-hunter-server-side-sagorahamed251245.vercel.app/chefs')
 
             },
