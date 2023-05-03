@@ -1,20 +1,60 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../provider/AuthProvider';
 
 const Login = () => {
+    const {singUser} = useContext(AuthContext)
+
+    const { createUser, setUserProfile} = useContext(AuthContext)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [passwordError, setPasswordError] = useState('')
+    const [successful , setSuccessful ] = useState('')
+    const [error, setError] = useState('')
+
+
+    const handelLogin = (e) => {
+        e.preventDefault();
+        singUser(email, password)
+        .then (result => {
+            setSuccessful('Successfully Login')
+            
+        })
+        .catch(error => {
+            console.log(error)
+            setError(error.message)
+            
+        })
+    }
+    const handleEmail = (e)=> {
+        const emailInput = e.target.value;
+        setEmail(emailInput)
+    }
+    const handlePassword = (e) => {
+        const passwordInput = e.target.value;
+        setPassword(passwordInput);
+        
+        
+    }
     return (
 
        <div className='flex items-center w-full h-[100vh] justify-center'>
          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <form className="space-y-6 " >
+            <form onSubmit={handelLogin} className="space-y-6 " >
                 <h5 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
                 <div>
                     <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                    <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Your Email" required/>
+                    <input  type="email" name="email" id="email"
+                     value={email}
+                     onChange={handleEmail}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Your Email" required/>
                 </div>
                 <div>
                     <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                    <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required/>
+                    <input type="password" name="password" id="password" 
+                    value={password}
+                    onChange={handlePassword}
+                    placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required/>
                 </div>
                 <div className="flex items-start">
                     <div className="flex items-start">
@@ -29,6 +69,9 @@ const Login = () => {
                 <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                     Not registered? <Link to='/register' className="text-green-700 hover:underline dark:text-green-500">Create account</Link>
                 </div>
+                {
+                    error ? <p className='text-red-500'>{error}</p> :<p className='text-green-500'>{successful}</p>
+                }
             </form>
         </div>
        </div>

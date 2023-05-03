@@ -7,6 +7,8 @@ const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordError, setPasswordError] = useState('')
+    const [successful , setSuccessful ] = useState('')
+    const [error, setError] = useState('')
 
 const navigate = useNavigate()
     const handelSingUpUser = (e) => {
@@ -18,12 +20,12 @@ const navigate = useNavigate()
         createUser(email,password )
         .then(result => {
            setUserProfile(userName , photo)
-              console.log(result.user)
+           setSuccessful('Successfully Login')
               
         }
             )
         .catch(error => {
-            console.log(error.message)
+            setError(error.message)
         });
 
 
@@ -82,6 +84,9 @@ const navigate = useNavigate()
                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                         Have an account? <Link to='/login' className="text-green-700 hover:underline dark:text-green-500">Login</Link>
                     </div>
+                    {
+                    error ? <p className='text-red-500'>{error}</p> :<p className='text-green-500'>{successful}</p>
+                }
                 </form>
             </div>
         </div>
