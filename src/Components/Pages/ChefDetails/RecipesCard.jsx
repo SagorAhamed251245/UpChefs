@@ -7,8 +7,8 @@ const RecipesCard = ({ recipe }) => {
     const { name, image, ingredients, cooking_method, rating , id} = recipe
 
     return (
-        <div className=" shadow-xl  mt-5 h-[650px] w-96 border-black  rounded-lg bg-green-200">
-            <div className={`h-[30%] w-full bg-cover rounded-lg`} style={{ 'backgroundImage': `url(${image} )` }}>
+        <div className=" shadow-xl  mt-5 h-[700px] w-[550px] border-black  rounded-lg bg-green-200">
+            <div className={`h-[40%] w-full bg-cover rounded-lg`} style={{ 'backgroundImage': `url(${image} )` }}>
             </div>
 
 
@@ -34,7 +34,7 @@ const RecipesCard = ({ recipe }) => {
                     <p className=''>
                         <span className='font-bold'>Rating:</span> {rating}
                     </p>
-                    <div className='w-[100%] mt-auto mb-8 flex pr-2 justify-between'>
+                    <div className='w-[100%] mt-auto mb-24 flex pr-2 justify-between'>
                         <Link to={`/recipe/${id}`}>
                             <button className='my-btn font-bold '>Learn More</button>
                         </Link>
