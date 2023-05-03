@@ -4,13 +4,13 @@ import { AuthContext } from '../../provider/AuthProvider';
 
 
 const Header = () => {
-    const { user , logOut } = useContext(AuthContext)
+    const { user , logOut , loading } = useContext(AuthContext)
 
-
+    
 
 
     return (
-        <nav className='mx-5'>
+        <nav  className={`mx-5 ${loading && 'hidden'}`}>
             <div className="navbar justify-between   ">
                 <div >
                     <p className=" normal-case font-extrabold text-xl md:text-3xl">UpChefs</p>
