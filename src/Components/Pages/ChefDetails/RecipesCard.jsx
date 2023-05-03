@@ -7,7 +7,7 @@ const RecipesCard = ({ recipe }) => {
     const { name, image, ingredients, cooking_method, rating , id} = recipe
 
     return (
-        <div className=" shadow-xl  mt-36 h-[700px] w-96 border-black  rounded-lg">
+        <div className=" shadow-xl  mt-5 h-[650px] w-96 border-black  rounded-lg bg-green-200">
             <div className={`h-[30%] w-full bg-cover rounded-lg`} style={{ 'backgroundImage': `url(${image} )` }}>
             </div>
 
@@ -28,8 +28,8 @@ const RecipesCard = ({ recipe }) => {
                         <span className='text-green-400 font-semibold text-2xl'> { }</span>
 
                     </p>
-                    <p className='pr-2'>
-                        <span className='font-bold'>Cooking Method:</span> {cooking_method?.slice(0, 200)}...
+                    <p className='pr-2  '>
+                        <span className='font-bold break-words'>Cooking Method:</span> {cooking_method?.slice(0, 200)}...
                     </p>
                     <p className=''>
                         <span className='font-bold'>Rating:</span> {rating}
