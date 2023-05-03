@@ -1,25 +1,30 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 
 const Header = () => {
-    const { user , logOut , loading } = useContext(AuthContext)
+    const { user, logOut, loading } = useContext(AuthContext)
 
-    
+
 
 
     return (
-        <nav  className={`mx-5 ${loading && 'hidden'}`}>
+        <nav className={`mx-5 ${loading && 'hidden'}`}>
             <div className="navbar justify-between   ">
                 <div >
                     <p className=" normal-case font-extrabold text-xl md:text-3xl">UpChefs</p>
                 </div>
                 <div className='flex gap-5  font-semibold '>
-                    <Link to='/' className='hover:text-green-500'>Home</Link>
-                    <Link to='/blog' className='hover:text-green-500'>Blog</Link>
-                    <Link to='/blog' className='hover:text-green-500'>Recipes</Link>
-                    <Link to='/blog' className='hover:text-green-500'>Chefs</Link>
+
+                    <NavLink to='/'
+                        className={({ isActive }) => (isActive ? 'text-green-500' : 'hover:text-green-500')}>Home
+                    </NavLink>
+                    <NavLink to='/blog' className={({ isActive }) => (isActive ? 'text-green-500' : 'hover:text-green-500')}>Blog</NavLink>
+
+                    <NavLink to='/recipes' className={({ isActive }) => (isActive ? 'text-green-500' : 'hover:text-green-500')}>Recipes</NavLink>
+
+                    <NavLink to='/chefs' className={({ isActive }) => (isActive ? 'text-green-500' : 'hover:text-green-500')}>Chefs</NavLink>
 
 
 
@@ -32,7 +37,7 @@ const Header = () => {
                                 <button onClick={logOut} className='my-btn'>
                                     LogOut
                                 </button>
-                           </> : <>
+                            </> : <>
                                 <Link to='/login' >
                                     <button className='my-btn'>
                                         Login
