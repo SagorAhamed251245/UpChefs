@@ -81,14 +81,7 @@ const navigate = useNavigate()
                         </div>
                     </div>
                     <button type="submit" className="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Register to your account</button>
-                    <div>
-                        <button className="w-full text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">
-                            Login With Google</button>
-                    </div>
-                    <div>
-                        <button className="w-full text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">
-                            Login with Github</button>
-                    </div>
+                    
                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                         Have an account? <Link to='/login' className="text-green-700 hover:underline dark:text-green-500">Login</Link>
                     </div>
