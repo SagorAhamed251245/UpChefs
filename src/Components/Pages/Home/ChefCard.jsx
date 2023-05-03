@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
     
-    const { picture, name, num_recipes, years_of_experience, likes , id} = chef
+    const { picture , name, num_recipes, years_of_experience, likes , id} = chef
     return (
         <div className="card w-96 border-2 text-black bg-green-100 font-sans  hover:border-green-500  ">
 

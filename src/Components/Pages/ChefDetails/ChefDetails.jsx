@@ -1,11 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import RecipesCard from './RecipesCard';
 
 const ChefDetails = () => {
     const chefDetails = useLoaderData()
-    console.log(chefDetails)
+    
 
     const { picture, name, num_recipes, years_of_experience, likes, short_bio , recipes } = chefDetails
+    console.log(recipes)
     return (
         <div className='w-[90%] mx-auto mt-5 '>
 
@@ -38,7 +40,14 @@ const ChefDetails = () => {
                 </div>
             </div>
             {/* heder end */}
-
+                 <div className='flex  flex-wrap justify-between'>
+                    {
+                        recipes.map(recipe => <RecipesCard
+                        key={recipe.id}
+                        recipe={recipe}
+                        ></RecipesCard>)
+                    }
+                 </div>
 
         </div>
     );
