@@ -10,3 +10,6 @@
 .my-btn{
     @apply  text-black hover:bg-green-500 hover:text-white bg-green-400 px-5 rounded-lg py-2
 }
+.btn-disabled {
+    @apply text-black   bg-green-400 opacity-75 px-5 rounded-lg py-2
+}

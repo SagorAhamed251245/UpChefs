@@ -1,13 +1,22 @@
-import { list } from 'postcss';
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipesCard = ({ recipe }) => {
+    const [bookmark , setBookmark ]= useState(true)
 
     const { name, image, ingredients, cooking_method, rating , id} = recipe
 
+    const handelBookmark = () =>{
+        toast.success("Add to Favorite");
+        setBookmark(false)
+        console.log('clicked')
+    }
+
     return (
-        <div className=" shadow-xl  mt-5 h-[700px] w-[550px] border-black  rounded-lg bg-green-200">
+        <div className=" shadow-xl  mt-5 h-[700px] w-[550px] border-black  rounded-lg bg-slate-300">
             <div className={`h-[40%] w-full bg-cover rounded-lg`} style={{ 'backgroundImage': `url(${image} )` }}>
             </div>
 
@@ -39,7 +48,7 @@ const RecipesCard = ({ recipe }) => {
                             <button className='my-btn font-bold '>Learn More</button>
                         </Link>
                         
-                            <button className='my-btn font-bold'>Add to fev</button>
+                            <button disabled={!bookmark} onClick={handelBookmark} className={` ${bookmark ?' my-btn font-bold' : 'btn-disabled font-bold'}`}>Add to fev</button>
                        
 
                     </div>

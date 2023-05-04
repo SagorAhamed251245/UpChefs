@@ -46,8 +46,9 @@ const ChefDetails = () => {
              style={{ display: 'flex', gap: '20px', border: 'rounded' }}
            
             >
+             
                 
-                    <div className=' flex overflow-hidden  gap-[20px] '>
+                <div className=' flex overflow-hidden  gap-[20px] '>
                         {
                             recipes.map(recipe =>
                                
@@ -59,6 +60,7 @@ const ChefDetails = () => {
                             )
                         }
                     </div>
+                
                 
             </Marquee>
 
