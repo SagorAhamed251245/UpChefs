@@ -6,7 +6,7 @@ import { AuthContext } from '../../provider/AuthProvider';
 const Header = () => {
     const { user, logOut, loading } = useContext(AuthContext)
 
-
+ 
 
 
     return (
@@ -53,13 +53,13 @@ const Header = () => {
 
                     </div>
                     {user ? <>
-                        <div className="">
+                        <div className="tooltip  tooltip-bottom" data-tip={user.displayName}>
                             <label className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img src={user.photoURL} />
+                                <div className="w-10 rounded-full tooltip" data-tip="hello">
+                                    <img className=''  src={user.photoURL} />
                                 </div>
                             </label>
-
+                               
                         </div>
                     </> : ''
 

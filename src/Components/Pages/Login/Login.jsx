@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
 
 const Login = () => {
@@ -11,6 +11,9 @@ const Login = () => {
     const [passwordError, setPasswordError] = useState('')
     const [successful, setSuccessful] = useState('')
     const [error, setError] = useState('')
+    const navigate = useNavigate()
+    const location = useLocation()
+   
 
 
     const handelLogin = (e) => {
@@ -18,6 +21,7 @@ const Login = () => {
         singUser(email, password)
             .then(result => {
                 setSuccessful('Successfully Login')
+                {location.state?.from?.pathname ? navigate(location.state.from.pathname) : navigate('/') }
 
             })
             .catch(error => {
@@ -40,6 +44,7 @@ const Login = () => {
         createUserWithGoogle()
             .then(result => {
                 setSuccessful('Successfully Login')
+                {location.state?.from?.pathname ? navigate(location.state.from.pathname) : navigate('/') }
             })
             .catch(error => {
                 setError(error.message)
@@ -49,6 +54,7 @@ const Login = () => {
         createUserWithGithub()
             .then(result => {
                 setSuccessful('Successfully Login')
+                {location.state?.from?.pathname ? navigate(location.state.from.pathname) : navigate('/') }
             })
             .catch(error => {
                 setError(error.message)
@@ -81,20 +87,20 @@ const Login = () => {
                             </div>
                             <label for="remember" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                         </div>
-                        <Link href="#" className="ml-auto text-sm text-green-700 hover:underline dark:text-green-500">Forget Password?</Link>
+                        <Link  href="#" className="ml-auto text-sm text-green-700 hover:underline dark:text-green-500">Forget Password?</Link>
                     </div>
                     <button type="submit" className="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Login to your account</button>
 
 
 
                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                        Not registered? <Link to='/register' className="text-green-700 hover:underline dark:text-green-500">Create account</Link>
+                        Not registered? <Link to='/register' state={location } className="text-green-700 hover:underline dark:text-green-500">Create account</Link>
                     </div>
                     {
-                        error ? <p className='text-red-500'>{error}</p> : <p className='text-green-500'>{successful}</p>
+                        error ? <p className='text-red-500 text-lg text-center font-bold'>{error}</p> : <p className='text-green-500 text-lg text-center  font-bold'>{successful}</p>
                     }
                 </form>
-                <div className='mb-5'>
+                <div className='mb-5 mt-3'>
                     <button onClick={handelGoogleSingIn} className="w-full text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">
                         Login With Google</button>
                 </div>

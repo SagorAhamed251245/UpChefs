@@ -9,12 +9,12 @@ const Footer = () => {
                     <div class="text-center">
                         <h3 class="text-3xl mb-3 font-Playfair font-bold"> To Hire Our Chefs </h3>
                         <p>Eat healthy and Stay healthy </p>
-                        <div class="flex gap-5  justify-center my-10">
+                        <div class="flex gap-5 flex-col md:flex-row justify-center my-10">
                             
-                                <input className='bg-transparent border p-1 w-[300px] rounded-md text-white px-3' type="email" placeholder='your Email' />
+                                <input className='bg-transparent border p-1 w-[300px] rounded-md text-white px-3 mx-auto md:mx-0' type="email" placeholder='your Email' />
                            
                            
-                                <button className='my-btn font-bold'>Contact Us</button>
+                                <button className='my-btn font-bold w-[150px] mx-auto md:mx-0'>Contact Us</button>
                             
                         </div>
                     </div>

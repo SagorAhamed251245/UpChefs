@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
 
 const Register = () => {
@@ -9,8 +9,11 @@ const Register = () => {
     const [passwordError, setPasswordError] = useState('')
     const [successful , setSuccessful ] = useState('')
     const [error, setError] = useState('')
-
+    
+   const location = useLocation()
+   console.log(location)
 const navigate = useNavigate()
+
     const handelSingUpUser = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -21,6 +24,7 @@ const navigate = useNavigate()
         .then(result => {
            setUserProfile(userName , photo)
            setSuccessful('Successfully Login')
+           {location.state?.state?.from?.pathname ? navigate(location.state.state.from.pathname) : navigate('/') }
               
         }
             )
@@ -86,8 +90,8 @@ const navigate = useNavigate()
                         Have an account? <Link to='/login' className="text-green-700 hover:underline dark:text-green-500">Login</Link>
                     </div>
                     {
-                    error ? <p className='text-red-500'>{error}</p> :<p className='text-green-500'>{successful}</p>
-                }
+                        error ? <p className='text-red-500 text-lg text-center font-bold'>{error}</p> : <p className='text-green-500 text-lg text-center  font-bold'>{successful}</p>
+                    }
                 </form>
             </div>
         </div>

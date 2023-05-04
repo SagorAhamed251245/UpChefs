@@ -6,7 +6,6 @@ import Blogs from '../Components/Pages/Blogs/Blogs';
 import Register from '../Components/Pages/Register/Register';
 import Login from '../Components/Pages/Login/Login';
 import ChefDetails from '../Components/Pages/ChefDetails/ChefDetails';
-import RecipesCard from '../Components/Pages/ChefDetails/RecipesCard';
 import RecipesDetails from '../Components/Pages/RecipesDetails/RecipesDetails';
 import PrivateRoute from './PrivateRoute';
 import ErrorPage from '../Components/Pages/Error/ErrorPage';

@@ -12,7 +12,7 @@ const Home = () => {
         <div>
         <p className=' text-center my-24 text-4xl font-bold'>Our Available Chef</p>
         </div>
-          <div className='flex  flex-wrap items-center justify-between gap-5 mt-10'>
+          <div className='flex  flex-wrap items-center justify-center md:justify-between gap-5 mt-10'>
             
               {
                 allChefs.map(chef => <ChefCard
