@@ -16,7 +16,7 @@ const RecipesCard = ({ recipe }) => {
     }
 
     return (
-        <div className=" shadow-xl  mt-5 h-[700px] w-[550px] border-black  rounded-lg bg-slate-300">
+        <div className=" shadow-xl  mt-5 h-[700px] w-[550px] border-black  rounded-lg ">
             <div className={`h-[40%] w-full bg-cover rounded-lg`} style={{ 'backgroundImage': `url(${image} )` }}>
             </div>
 

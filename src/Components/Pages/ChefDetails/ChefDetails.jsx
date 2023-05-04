@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RecipesCard from './RecipesCard';
 import Marquee from 'react-fast-marquee';
+import LeftTORight from './LeftTORight';
 
 const ChefDetails = () => {
     const chefDetails = useLoaderData()
@@ -40,15 +41,15 @@ const ChefDetails = () => {
             </div>
             {/* heder end */}
             <div className='flex  flex-col gap-24'>
-            <Marquee pauseOnHover
+            {/* <Marquee pauseOnHover
              gradient
              gradientWidth={'10px'}
              style={{ display: 'flex', gap: '20px', border: 'rounded' }}
            
-            >
+            > */}
              
                 
-                <div className=' flex overflow-hidden  gap-[20px] '>
+                <div className=' flex flex-row flex-wrap justify-evenly overflow-hidden  gap-[20px] '>
                         {
                             recipes.map(recipe =>
                                
@@ -62,9 +63,9 @@ const ChefDetails = () => {
                     </div>
                 
                 
-            </Marquee>
+            {/* </Marquee> */}
 
-            <Marquee pauseOnHover
+            <Marquee 
             gradient
            gradientWidth={'10px'}
             direction='right'
@@ -76,10 +77,10 @@ const ChefDetails = () => {
                         {
                             recipes.map(recipe =>
                                
-                                    <RecipesCard
+                                    <LeftTORight
                                     key={recipe.id}
                                     recipe={recipe}
-                                ></RecipesCard>
+                                ></LeftTORight>
                                 
                             )
                         }
