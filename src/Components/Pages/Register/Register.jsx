@@ -40,7 +40,9 @@ const navigate = useNavigate()
 
     const handleEmail = (e)=> {
         const emailInput = e.target.value;
+        
         setEmail(emailInput)
+
     }
     const handlePassword = (e) => {
         const passwordInput = e.target.value;

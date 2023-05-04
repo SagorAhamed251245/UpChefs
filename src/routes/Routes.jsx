@@ -9,6 +9,7 @@ import ChefDetails from '../Components/Pages/ChefDetails/ChefDetails';
 import RecipesDetails from '../Components/Pages/RecipesDetails/RecipesDetails';
 import PrivateRoute from './PrivateRoute';
 import ErrorPage from '../Components/Pages/Error/ErrorPage';
+import RecipesCard from '../Components/Pages/ChefDetails/RecipesCard';
 
 
 
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
                 path: '/blog',
                 element: <Blogs></Blogs>
             },
+            
             {
                 path: 'login',
                 element: <Login></Login>

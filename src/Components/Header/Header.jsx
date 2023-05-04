@@ -10,8 +10,8 @@ const Header = () => {
 
 
     return (
-        <nav className={`mx-5 ${loading && 'hidden'}`}>
-            <div className="navbar justify-between   ">
+        <nav className={`mx-5`}>
+            <div className="navbar md:justify-between flex-col md:flex-row gap-3 md:gap-0 ">
                 <div >
                     <p className=" normal-case font-extrabold text-xl md:text-3xl">UpChefs</p>
                 </div>
@@ -31,7 +31,8 @@ const Header = () => {
                 </div>
 
                 <div className="flex-none">
-                    <div className='flex gap-5 mr-3 font-semibold'>
+                
+                    <div className={`flex gap-5 mr-3 font-semibold ${loading && 'hidden'}`}>
                         {
                             user ? <>
                                 <button onClick={logOut} className='my-btn'>
