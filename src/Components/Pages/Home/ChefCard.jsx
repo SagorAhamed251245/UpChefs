@@ -1,15 +1,23 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const ChefCard = ({ chef }) => {
-    
-    const { picture , name, num_recipes, years_of_experience, likes , id} = chef
+
+    const { picture, name, num_recipes, years_of_experience, likes, id } = chef
     return (
+
+
         <div className="card w-96 border-2 text-black  font-sans  hover:border-green-500  ">
 
+            <LazyLoadImage
+                
+                src={picture} // use normal <img> attributes as props
+                className=" h-[230px]  rounded-2xl   object-cover"
+                />
 
-
-            <img src={picture} className=" h-[230px]  rounded-2xl   object-cover" />
 
 
 
@@ -33,6 +41,7 @@ const ChefCard = ({ chef }) => {
                 </div>
             </div>
         </div>
+
     );
 };
 

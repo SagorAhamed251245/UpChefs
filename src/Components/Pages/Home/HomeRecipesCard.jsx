@@ -12,7 +12,7 @@ const HomeRecipesCard = () => {
             .then(data => setRecipesData(data))
     }, [])
      
-    console.log(recipesData)
+   
     return (
         <div className=' flex overflow-hidden  gap-[20px] '>
                        
