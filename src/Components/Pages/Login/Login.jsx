@@ -18,7 +18,11 @@ const Login = () => {
 
     const handelLogin = (e) => {
         e.preventDefault();
-        singUser(email, password)
+        if(password.length < 6){
+            setError('PassWord Must Be 6 Character')
+        }
+        else{
+            singUser(email, password)
             .then(result => {
                 setSuccessful('Successfully Login')
                 {location.state?.from?.pathname ? navigate(location.state.from.pathname) : navigate('/') }
@@ -29,6 +33,7 @@ const Login = () => {
                 setError(error.message)
 
             })
+        }
     }
     const handleEmail = (e) => {
         const emailInput = e.target.value;
